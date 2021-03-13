@@ -1,9 +1,8 @@
-import React from 'react';
-import ValidationSample from "./ValidationSample";
+import React from "react";
+import IterationSample from "./iterationTutorial/IterationSample";
 
 const App = () => {
-    return <ValidationSample/>
+  return <IterationSample />;
 };
 
 export default App;
-
