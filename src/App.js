@@ -1,8 +1,29 @@
 import React from "react";
-import IterationSample from "./iterationTutorial/IterationSample";
+import LifeCycleSample from "./LifeCycleTutorial/LifeCycleSample";
+import ErrorBoundary from "./LifeCycleTutorial/ErrorBoundary";
+
+
 
 const App = () => {
-  return <IterationSample />;
+
+    const getRandomColor = () => {
+        return '#' + Math.floor(Math.random() * 16777215).toString(16)
+    }
+
+    const [color, setColor] = React.useState(['#000000'])
+    const handleClick = () => {
+        setColor(getRandomColor())
+    }
+
+    return (
+        <div>
+            <button onClick={handleClick}>랜덤 색상</button>
+            <ErrorBoundary>
+                <LifeCycleSample color={color}/>
+            </ErrorBoundary>
+        </div>
+    )
 };
 
 export default App;
+
